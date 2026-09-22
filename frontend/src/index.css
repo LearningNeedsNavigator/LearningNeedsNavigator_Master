@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Backgrounds */
+    --background: 210 40% 98%; /* #F8FAFC */
+    --foreground: 222 47% 11%; /* #0F172A */
+
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    /* Popovers */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Academic Teal */
+    --primary: 175 84% 31%; /* #0D9488 */
+    --primary-foreground: 210 40% 98%;
+
+    /* Blue Violet */
+    --secondary: 233 100% 68%; /* #5B6CFF */
+    --secondary-foreground: 210 40% 98%;
+
+    /* Mint Teal */
+    --accent: 170 77% 64%; /* #5EEAD4 */
+    --accent-foreground: 222 47% 11%;
+
+    /* Text */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 46%; /* #64748B */
+
+    /* Borders */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 175 84% 31%;
+
+    /* Misc */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%; /* #0F172A */
+    --foreground: 210 40% 98%;
+
+    --card: 222 40% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 40% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 175 84% 31%; /* #0D9488 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 233 100% 68%; /* #5B6CFF */
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 170 77% 64%; /* #5EEAD4 */
+    --accent-foreground: 222 47% 11%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 75%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 175 84% 31%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #0d9488 0%, #5eead4 40%, #5b6cff 100%);
+}
+.hero-gradient-text {
+  background: linear-gradient(135deg, #0d9488, #5b6cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.soft-shadow {
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.brand-shadow {
+  box-shadow: 0 12px 40px rgba(91, 108, 255, 0.12);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-120%) skewX(-12deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateX(220%) skewX(-12deg);
+    opacity: 0;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  header,
+  footer,
+  nav,
+  [data-print-hide],
+  .print\:hidden {
+    display: none !important;
+  }
+  html,
+  body {
+    background: #ffffff !important;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .container,
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  /* Avoid splitting cards across pages */
+  [class*="rounded-xl"],
+  [class*="rounded-lg"],
+  .card,
+  section,
+  article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  /* Charts: keep together */
+  .recharts-wrapper,
+  .recharts-responsive-container {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

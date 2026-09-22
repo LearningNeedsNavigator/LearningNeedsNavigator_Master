@@ -1,0 +1,43 @@
+:root {
+  /* Core Brand Colors */
+
+  --background: 210 40% 98%; /* #F8FAFC */
+  --foreground: 222 47% 11%; /* #0F172A */
+
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Primary = Academic Teal */
+
+  --primary: 175 84% 31%; /* #0D9488 */
+  --primary-foreground: 210 40% 98%;
+
+  /* Secondary = Blue Violet */
+
+  --secondary: 233 100% 68%; /* #5B6CFF */
+  --secondary-foreground: 210 40% 98%;
+
+  /* Mint Accent */
+
+  --accent: 170 77% 64%; /* #5EEAD4 */
+  --accent-foreground: 222 47% 11%;
+
+  /* Text */
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 46%; /* #64748B */
+
+  /* UI */
+
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 175 84% 31%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --radius: 0.75rem;
+}
